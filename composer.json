@@ -1,0 +1,23 @@
+{
+	"name": "weidizhang/PHP-Timed-Tasks",
+	"description": "Easily manage and created multiple time tasks with PHP",
+	"license": "CC BY-NC-ND 4.0",
+	
+	"authors": [
+		{
+			"name": "Weidi Zhang",
+			"homepage": "https://weidizhang.github.io/",
+			"role": "Developer"
+		}
+	],
+	
+	"autoload": {
+		"psr-4": {
+			"weidizhang\\PHPTimedTasks\\": "src/"
+		}
+	},
+		
+	"require": {
+		"php": ">=5.5.0"
+	}
+}

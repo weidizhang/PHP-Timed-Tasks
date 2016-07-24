@@ -1,6 +1,6 @@
 {
-	"name": "weidizhang/PHP-Timed-Tasks",
-	"description": "Easily manage and created multiple time tasks with PHP",
+	"name": "weidizhang/php-timed-tasks",
+	"description": "Easily manage and create multiple timed tasks with PHP",
 	"license": "CC BY-NC-ND 4.0",
 	
 	"authors": [

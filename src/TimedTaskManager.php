@@ -11,6 +11,18 @@ class TimedTaskManager
 	
 	public function addTask($task) {
 		$this->tasks[] = $task;
+		
+		end($this->tasks);
+		return key($this->tasks);
+	}
+	
+	public function removeTask($taskIndex) {
+		if (isset($this->tasks[$taskIndex])) {
+			unset($this->tasks[$taskIndex]);
+			
+			return true;
+		}
+		return false;
 	}
 	
 	public function runTasks() {
@@ -22,7 +34,7 @@ class TimedTaskManager
 				
 				if ($task->runTask()) {
 					if (($task->getTimesRun() >= $task->getMaxTimes()) && $task->getMaxTimes() > 0) {
-						unset($this->tasks[$taskIndex]);
+						$this->removeTask($taskIndex);
 					}
 				}
 			}

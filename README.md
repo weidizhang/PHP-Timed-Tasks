@@ -5,8 +5,7 @@ Created by Weidi Zhang
 ## Installation
 
 ```
-composer require ebildude123/PHP-Timed-Tasks
-composer install
+composer require weidizhang/php-timed-tasks:dev-master
 ```
 
 ## Usage
@@ -14,7 +13,7 @@ composer install
 First, require the autoloader and use the classes.
 
 ```
-require "vendor/autoloader.php";
+require "vendor/autoload.php";
 
 use weidizhang\PHPTimedTasks\Task;
 use weidizhang\PHPTimedTasks\TimedTaskManager;

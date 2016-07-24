@@ -27,15 +27,19 @@ class TimedTaskManager
 	
 	public function runTasks() {
 		while (true) {
-			sleep(1);
-				
-			foreach ($this->tasks as $taskIndex => $task) {
-				$task->incrementTimeElapsed();
-				
-				if ($task->runTask()) {
-					if (($task->getTimesRun() >= $task->getMaxTimes()) && $task->getMaxTimes() > 0) {
-						$this->removeTask($taskIndex);
-					}
+			$this->runTasksOnce();
+		}
+	}
+	
+	public function runTasksOnce() {
+		sleep(1);
+			
+		foreach ($this->tasks as $taskIndex => $task) {
+			$task->incrementTimeElapsed();
+			
+			if ($task->runTask()) {
+				if (($task->getTimesRun() >= $task->getMaxTimes()) && $task->getMaxTimes() > 0) {
+					$this->removeTask($taskIndex);
 				}
 			}
 		}

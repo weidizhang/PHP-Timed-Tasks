@@ -88,7 +88,7 @@ The first option is to use:
 ```
 $manager->runTasks();
 ```
-All code after this will not run.
+All code after this will not run while there are still tasks remaining.
 
 
 If you have other tasks to perform, use your own while loop instead

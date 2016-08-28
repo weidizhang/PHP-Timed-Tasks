@@ -93,9 +93,7 @@ All code after this will not run while there are still tasks remaining.
 
 If you have other tasks to perform, use your own while loop instead
 ```
-while (true) {
-	$manager->runTasksOnce();
-	
+while ($manager->runTasksOnce()) {
 	// your additional logic
 }
 ```

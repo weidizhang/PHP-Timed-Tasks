@@ -83,6 +83,18 @@ $manager->addTask(
 ```
 This is done by calling the addParameters function of the Task class which accepts an array.
 
+### Using a random interval range
+
+```
+$manager->addTask(
+    (new Task(function() {
+        echo "[" . date("h:i:s A") . "] Hello every 5-10 seconds!\n";
+    }))
+	->setRandomIntervalRange(5, 10)
+);
+```
+This task will run every 5 to 10 seconds, a random interval between this range is used each time.
+
 ### Running tasks
 The first option is to use:
 ```

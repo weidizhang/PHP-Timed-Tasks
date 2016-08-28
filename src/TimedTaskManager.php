@@ -46,6 +46,9 @@ class TimedTaskManager
 					if (($task->getTimesRun() >= $task->getMaxTimes()) && $task->getMaxTimes() > 0) {
 						$this->removeTask($taskIndex);
 					}
+					else {
+						$task->updateInterval();
+					}					
 				}
 			}
 			

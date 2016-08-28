@@ -16,7 +16,10 @@ class Task
 	private $timesRun = 0;	
 	private $timeElapsed = 0;
 	
-	public function __construct($function, $interval) {
+	private $randIntervalMin = 0;
+	private $randIntervalMax = 0;
+	
+	public function __construct($function, $interval = 1) {
 		$this->function = $function;
 		$this->interval = $interval;
 	}
@@ -29,6 +32,18 @@ class Task
 	public function setMaxTimes($max) {
 		$this->maxTimesToRun = $max;
 		return $this;
+	}
+	
+	public function setRandomIntervalRange($min, $max) {
+		$this->randIntervalMin = $min;
+		$this->randIntervalMax = $max;
+		return $this;
+	}
+		
+	public function updateInterval() {
+		if ($this->randIntervalMin > 0 && $this->randIntervalMax > 0) {
+			$this->interval = rand($this->randIntervalMin, $this->randIntervalMax);
+		}
 	}
 	
 	public function getMaxTimes() {
